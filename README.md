@@ -1,6 +1,11 @@
 # dp701 theme for IDA Pro
 Dark theme inspired by Visual Studio
 
+# Features
+
+- Multiple sizes for different DPI
+- Attention to detail
+
 # Preview
 
 ![](screenshots/theme-preview.png)
@@ -19,9 +24,13 @@ Dark theme inspired by Visual Studio
 
 ## Change fonts
 
-The font is already set in the theme file, but there is a bug in the IDA that resets the parameters from the `CSS` for fonts.
+The font is already set in the theme file, but you can change it by opening `theme.css` and going to the block `Block for personalization` at the end of the file.
 
-Solution: set the font (**Consolas**) for the disassembler window in `Options > Font...`.  or apply [reg](https://wiki.winehq.org/Regedit) file (for Windows):
+### Known Issue
+
+There is a bug in the IDA that resets the parameters from the `CSS` for fonts.
+
+Solution is set the font (**Consolas**) for the disassembler window in `Options > Font...`.  or apply [reg](https://wiki.winehq.org/Regedit) file (for Windows):
 
 ```ini
 Windows Registry Editor Version 5.00
