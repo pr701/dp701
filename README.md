@@ -12,7 +12,7 @@ Dark theme inspired by Visual Studio
 
 # Requirements
 
-- IDA Pro version  **7.3** or newer
+- IDA version **7.3** or newer
 - Installed **Segoe UI** and **Consolas** fonts
 
 # Installation
