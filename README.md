@@ -39,6 +39,19 @@ Windows Registry Editor Version 5.00
 [-HKEY_CURRENT_USER\SOFTWARE\Hex-Rays\IDA\Font]
 ```
 
+## Color settings for other plugins
+
+Pre-calculated color settings for plugins.
+
+### deREferencing
+
+For the [deREferencing](https://github.com/danigargu/deREferencing) plugin, change the specified settings in the file `deferencing/config.py`:
+
+```python
+highlight_changes = True
+highlight_color   = 0x784f26
+```
+
 ## Optional for Windows 10
 
 This methods works only for **Windows 10**.

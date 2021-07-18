@@ -772,10 +772,11 @@ CustomIDAMemo {
 	qproperty-line-bgovl-extra-13: rgba(107, 74, 156, 0.4);
 }
 CustomIDAMemo[debugging="true"] {
+	qproperty-line-bgovl-current-ip: rgba(80, 160, 255, .4);
 	qproperty-line-bg-default: #001f33;
 	qproperty-graph-bg-top: #1e1e1e;
 	qproperty-graph-bg-bottom: #1e1e1e;
-	qproperty-line-fg-numlit-in-data: #b8e8a3;
+	qproperty-line-fg-numlit-in-data: #a9e8a3;
 	qproperty-line-fg-numlit-in-insn: #b8e8a3;
 }
 CustomIDAMemo[hints="true"] {
