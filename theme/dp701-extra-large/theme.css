@@ -677,12 +677,12 @@ TextEdit {
 	property-number-weight: 0;
 	property-number-italic: 0;
 }
-TextEdit QWidget {
+text_area_t QWidget {
 	background-color: transparent;
 }
 
 /* struct edit */
-TextEdit text_edit_margin_widget_t {
+text_area_t text_edit_margin_widget_t {
 	qproperty-header-color: #f1f1f1;
 	color: #666;
 }
