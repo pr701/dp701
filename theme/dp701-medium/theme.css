@@ -3,7 +3,7 @@
 	Inspired by Visual Studio theme
 	element size: medium
 
-	pr701, 2021
+	pr701, 2025
 */
 
 @importtheme "_base";
@@ -163,7 +163,8 @@ QMenu {
 }
 
 QMenu::item {
-	padding: 3px auto 3px auto;
+	/*padding: 3px auto 3px auto;
+	margin-right: 8px;*/
 }
 
 QMenu::item:disabled {
@@ -209,7 +210,7 @@ QPushButton:!enabled {
 	color: #656565;
 }
 
-/* Checboxes, radio etc */
+/* Checkboxes, radio etc */
 
 QRadioButton, QCheckBox, QLabel {
 	background: transparent;
@@ -677,11 +678,56 @@ TextEdit {
 	property-number-weight: 0;
 	property-number-italic: 0;
 }
+TextEdit QWidget {
+	background-color: transparent;
+}
+/* source/structs syntax for IDA 9+ */
+text_area_t {
+	qproperty-keyword1-fg: #d8a0df;
+	qproperty-keyword1-weight: 0;
+	qproperty-keyword1-italic: 0;
+	qproperty-keyword2-fg: #569cd6;
+	qproperty-keyword2-weight: 0;
+	qproperty-keyword2-italic: 0;
+	qproperty-keyword3-fg: #d85050;
+	qproperty-keyword3-weight: 0;
+	qproperty-keyword3-italic: 0;
+	qproperty-string-fg: #d69d85;
+	qproperty-string-weight: 0;
+	qproperty-string-italic: 0;
+	qproperty-comment-fg: #57a64a;
+	qproperty-comment-weight: 0;
+	qproperty-comment-italic: 0;
+	qproperty-preprocessor-fg: #beb7ff;
+	qproperty-preprocessor-weight: 0;
+	qproperty-preprocessor-italic: 0;
+	qproperty-number-fg: #b5cea8;
+	property-number-weight: 0;
+	property-number-italic: 0;
+	qproperty-user1-fg: #4EC9B0;
+	qproperty-user1-weight: 0;
+	qproperty-user1-italic: 0;
+	qproperty-user2-fg: #9b9b9b;
+	qproperty-user2-weight: 0;
+	qproperty-user2-italic: 0;
+	qproperty-user3-fg: #e070b0;
+	qproperty-user3-weight: 0;
+	qproperty-user3-italic: 0;
+	qproperty-user4-fg: #e8c9bb;
+	qproperty-user4-weight: 0;
+	qproperty-user4-italic: 0;
+}
 text_area_t QWidget {
 	background-color: transparent;
 }
 
 /* struct edit */
+TextEdit text_edit_margin_widget_t {
+	qproperty-header-color: #f1f1f1;
+	color: #666;
+}
+
+/* struct edit IDA 9+ */
 text_area_t text_edit_margin_widget_t {
 	qproperty-header-color: #f1f1f1;
 	color: #666;
@@ -696,7 +742,7 @@ TChooser {
 /* main dasm color scheme */
 CustomIDAMemo {
 	/* current line background overlay */
-	qproperty-line-bgovl-current-line: rgba(80, 80, 80, 0.25);
+	qproperty-caret: #ffffff;
 	qproperty-line-fg-default: #dcdcdc;
 	qproperty-line-fg-regular-comment: #57a64a;
 	qproperty-line-fg-repeatable-comment: #808080;
@@ -764,12 +810,51 @@ CustomIDAMemo {
 	qproperty-graph-edge-no: #d85050;
 	qproperty-graph-edge-high: #007acc;
 	qproperty-graph-edge-current: #fdfdfd;
+	qproperty-graph-edge-selected: #007acc;
+	qproperty-graph-node-frame-selected: #007acc;
 	qproperty-line-fg-patched-bytes: #d85050;
 	qproperty-line-fg-unsaved-changes: #ecdcaa;
 	qproperty-line-bg-highlight: #133f71;
 	qproperty-line-bg-hint: #4ec9b0;
+	/* lines */
+	qproperty-line-bgovl-current-line: rgba(80, 80, 80, 0.25);
+	qproperty-line-bgovl-trace: rgba(50, 65, 138, 0.4);
+	qproperty-line-bgovl-trace-ovl: rgba(88, 66, 222, 0.4);
 	/* extra colors */
-	qproperty-line-bgovl-extra-13: rgba(107, 74, 156, 0.4);
+	qproperty-line-bgovl-extra-1: rgba(96, 60, 127, 0.4);
+	qproperty-line-bgovl-extra-2: rgba(49, 15, 83, 0.4);
+	qproperty-line-bgovl-extra-3: rgba(80, 100, 222, 0.4);
+	qproperty-line-bgovl-extra-4: rgba(50, 30, 150, 0.4);
+	qproperty-line-bgovl-extra-5: rgba(111, 53, 184, 0.4);
+	qproperty-line-bgovl-extra-6: rgba(100, 88, 124, 0.4);
+	qproperty-line-bgovl-extra-7: rgba(158, 147, 179, 0.4);
+	qproperty-line-bgovl-extra-8: rgba(86, 88, 126, 0.4);
+	qproperty-line-bgovl-extra-9: rgba(185, 90, 210, 0.4);
+	qproperty-line-bgovl-extra-10: rgba(40, 70, 180, 0.4);
+	qproperty-line-bgovl-extra-11: rgba(130, 0, 95, 0.4);
+	qproperty-line-bgovl-extra-12: rgba(110, 44, 100, 0.4);
+	qproperty-line-bgovl-extra-13: rgba(175, 110, 160, 0.4);
+	qproperty-line-bgovl-extra-14: rgba(80, 128, 166, 0.4);
+	qproperty-line-bgovl-extra-15: rgba(133, 90, 133, 0.4);
+	qproperty-line-bgovl-extra-16: rgba(33, 66, 44, 0.4);
+	/* diff/merge */
+	qproperty-line-bgovl-diff-region-pick: rgba(38, 76, 50, 0.5);
+	qproperty-line-bgovl-diff-region-leave: rgba(17, 34, 21, 0.5);
+	qproperty-line-bgovl-diff-region-conflict: rgba(68, 2, 2, 0.5);
+	qproperty-line-bgovl-diff-region-pick-current: rgba(38, 76, 50, 1.0);
+	qproperty-line-bgovl-diff-region-leave-current: rgba(17, 34, 21, 1.0);
+	qproperty-line-bgovl-diff-region-conflict-current: rgba(68, 2, 2, 1.0);
+	/* bookmarks */
+	qproperty-line-bgovl-bookmark: rgba(20, 90, 110, 0.4);
+	qproperty-bookmark-star-outline: rgba(20, 90, 110, 0.8);
+	/* ex highlights */
+	qproperty-line-bg-highlight-2: rgba(90, 60, 170, 0.80);
+	qproperty-line-bg-highlight-3: rgba(50, 30, 150, 0.80);
+	qproperty-line-bg-highlight-4: rgba(140, 50, 140, 0.80);
+	qproperty-line-bg-highlight-5: rgba(110, 44, 110, 0.80);
+	qproperty-line-bg-highlight-6: rgba(44, 66, 44, 0.80);
+	qproperty-line-bg-highlight-7: rgba(110, 60, 70, 0.80);
+	qproperty-line-bg-highlight-8: rgba(67, 67, 67, 0.80);
 }
 CustomIDAMemo[debugging="true"] {
 	qproperty-line-bgovl-current-ip: rgba(80, 160, 255, .2);
@@ -840,6 +925,10 @@ QWidget {
 	font-size: 9pt;
 }
 
+text_area_t {
+	font-family: "Consolas";
+	font-size: 10pt;
+}
 /*
 DockWidgetTitle, IDAMainWindow, QStatusBar, QMenu, QMenuBar, QTabBar,
 QLineEdit, QComboBox, QPushButton, QHeaderView, QTreeView, QListView, QTableView,
